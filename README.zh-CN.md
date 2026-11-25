@@ -2,7 +2,7 @@
 
 **读论文时，查词不用离开原文。** 在网页或本地 PDF 里划词翻译，把术语、译文和当时的上下文一起留给自己复习。
 
-[English](README.md)
+[下载最新版](https://github.com/Felicia2Wang/margingloss/releases/latest) · [English](README.md)
 
 - **术语有多种译法。** 划词后在原文旁查看译文。使用大模型时，插件会附上附近的上下文辅助消歧。
 - **本地论文在 Chrome 里不好查词。** 从扩展弹窗打开已在 Chrome 中打开的本地 PDF，或手动选文件。内置阅读器支持双指和按钮缩放，缩放时保留阅读位置。
@@ -12,7 +12,7 @@
 
 ## 安装
 
-1. 在 GitHub 仓库点 **Code → Download ZIP**，下载并解压。
+1. 从 [GitHub Releases](https://github.com/Felicia2Wang/margingloss/releases/latest) 下载扩展 ZIP 并解压。也可以在仓库点 **Code → Download ZIP** 下载当前源码。
 2. 打开 `chrome://extensions/`，开启「开发者模式」，点「加载已解压的扩展程序」，选择含 `manifest.json` 的文件夹。
 3. 点扩展图标，进入「翻译设置」，添加并保存 API 配置。
 4. 网页中选中文字后点「译」。读本地论文时，从弹窗进入「本地 PDF 阅读」。

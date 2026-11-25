@@ -2,7 +2,7 @@
 
 **Read papers without leaving the page.** Translate a term or passage in a web article or local PDF, then save it with the original context for review.
 
-[简体中文](README.zh-CN.md) · [Install](#install) · [Privacy](#privacy)
+[Download](https://github.com/Felicia2Wang/margingloss/releases/latest) · [简体中文](README.zh-CN.md) · [Install](#install) · [Privacy](#privacy)
 
 When you look up an unfamiliar term in a separate tab, you lose your place. When you save only the translation, you lose the sentence that made the term meaningful. MarginGloss puts lookup, reading, and vocabulary review in one Chrome extension.
 
@@ -18,7 +18,7 @@ When you look up an unfamiliar term in a separate tab, you lose your place. When
 
 ## Install
 
-1. On GitHub, choose **Code → Download ZIP** and extract the archive.
+1. Download the extension ZIP from the [latest release](https://github.com/Felicia2Wang/margingloss/releases/latest) and extract it. To install the current source instead, choose **Code → Download ZIP** on GitHub.
 2. Open `chrome://extensions/`, enable **Developer mode**, then choose **Load unpacked**. Select the extracted folder containing `manifest.json`.
 3. Open the MarginGloss popup and choose **Translation settings (翻译设置)**. Create an API profile and save it. Current interface labels are in Simplified Chinese.
 4. Select text on a webpage and click **译**. For a local PDF, choose **本地 PDF 阅读** in the popup.
