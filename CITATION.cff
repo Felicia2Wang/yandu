@@ -4,7 +4,7 @@ type: software
 title: "浏览器论文阅读插件 (Browser Paper Reader)"
 authors:
   - name: Browser Paper Reader contributors
-version: 0.4.1
+version: 0.4.2
 date-released: 2026-11-25
 license: MIT
 repository-code: "https://github.com/Felicia2Wang/browser-paper-reader"

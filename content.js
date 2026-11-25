@@ -133,7 +133,7 @@
       }
       showCardError(card, response.profiles.length
         ? "请选择用于这次翻译的 API 配置。"
-        : "请从扩展弹窗打开「翻译设置」，添加 API 配置。");
+        : "请从扩展弹窗打开「模型与提示词」，添加 API 配置。");
     } catch (error) {
       if (card === state.card) showCardError(card, error.message);
     }

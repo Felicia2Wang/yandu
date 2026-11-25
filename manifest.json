@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "浏览器论文阅读插件",
-  "version": "0.4.1",
-  "description": "在 Chrome 阅读网页论文和本地 PDF：划词翻译、专注模式、自定义 API 与模型，以及个人生词和术语知识库。",
+  "version": "0.4.2",
+  "description": "用自己的模型和 System Prompt 读论文。支持本地 PDF 划词翻译、生词与语境收藏，以及按页记忆的专注模式。",
   "icons": {
     "16": "assets/icon-16.png",
     "32": "assets/icon-32.png",

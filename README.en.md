@@ -1,18 +1,17 @@
 # Browser Paper Reader
 
-Translate selected text in research articles and local PDFs, dim distractions with Focus Mode, and save unfamiliar terms with their context.
+**Use your own model and system prompt to read research papers.** Translate selections in local PDFs or web articles and save unfamiliar terms with their original context.
 
 [Download](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest) · [简体中文](README.md)
 
-- **Selection translation.** Look up a word or passage while keeping your place. LLM providers can use nearby text to resolve ambiguity.
-- **Local PDF reader.** Open an existing local PDF tab or choose a file. Zoom with the trackpad or toolbar.
-- **Per-page Focus Mode.** Dim the area outside a reading band. Each webpage or PDF remembers its own setting.
-- **API and model profiles.** Save multiple DeepSeek, OpenAI-compatible, or Google Cloud Translation profiles. Pick a default in the popup or change the profile for a single translation in the result card.
-- **Personal knowledge base for vocabulary.** Save terms and phrases with their translation, context, source, and date. Search, delete, or export entries to CSV.
+- **Bring your own model and system prompt.** Save multiple API profiles and choose how LLMs handle terms, abbreviations, or citations. Supports DeepSeek, OpenAI-compatible APIs, and Google Cloud Translation.
+- **Translate selections in local PDFs or webpages.** Open a PDF already in Chrome or pick a local file. Read the translation next to the selection.
+- **Build your own vocabulary.** Save terms with translations, original context, and sources. Search or export to CSV.
+- **Focus per page.** Dim the area outside the reading band. Each webpage or PDF remembers its setting.
 
 ## Install
 
-Download and extract the ZIP from the [latest release](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest). Go to `chrome://extensions/`, enable **Developer mode**, and select the folder containing `manifest.json` using **Load unpacked**. Open **翻译设置** in the extension popup to add an API profile. The interface is in Simplified Chinese.
+Download and extract the ZIP from the [latest release](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest). Go to `chrome://extensions/`, enable **Developer mode**, and select the folder containing `manifest.json` using **Load unpacked**. Open **模型与提示词** in the extension popup to set an API profile and system prompt. The interface is in Simplified Chinese.
 
 Choose **本地 PDF 阅读** from the popup to read local PDFs. Enable **Allow access to file URLs** in the extension details if you want to detect local PDF tabs automatically. The manual file picker works without this permission. Scanned PDFs require a text layer from OCR.
 
