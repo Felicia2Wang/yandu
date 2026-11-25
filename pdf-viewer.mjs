@@ -108,7 +108,7 @@ async function loadPdf(bytes, name) {
     pages.append(...records.map(record => record.element));
     viewer.scrollTo(0, 0);
     records.forEach(record => observer.observe(record.element));
-    document.title = `${name} · 浏览器论文阅读插件`;
+    document.title = `${name} · 研读`;
     document.documentElement.dataset.pdfFingerprint = pdf.fingerprints[0];
     document.dispatchEvent(new Event("paperlingo-pdf-changed"));
   } catch (error) {

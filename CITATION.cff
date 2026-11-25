@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "If you use Browser Paper Reader in your work, please cite this software."
+message: "If you use Yandu in your work, please cite this software."
 type: software
-title: "浏览器论文阅读插件 (Browser Paper Reader)"
+title: "研读 (Yandu)"
 authors:
-  - name: Browser Paper Reader contributors
-version: 0.4.2
+  - name: Yandu contributors
+version: 0.4.3
 date-released: 2026-11-25
 license: MIT
-repository-code: "https://github.com/Felicia2Wang/browser-paper-reader"
+repository-code: "https://github.com/Felicia2Wang/yandu"

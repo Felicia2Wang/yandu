@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "浏览器论文阅读插件",
-  "version": "0.4.2",
+  "name": "研读",
+  "version": "0.4.3",
   "description": "用自己的模型和 System Prompt 读论文。支持本地 PDF 划词翻译、生词与语境收藏，以及按页记忆的专注模式。",
   "icons": {
     "16": "assets/icon-16.png",
@@ -18,7 +18,7 @@
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "action": {
-    "default_title": "浏览器论文阅读插件",
+    "default_title": "研读",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/icon-16.png",

@@ -182,7 +182,7 @@
     const card = document.createElement("section");
     card.className = "pl-root pl-card";
     card.innerHTML = `
-      <header><span class="pl-brand"><i>读</i> 浏览器论文阅读插件</span><button class="pl-close" title="关闭">×</button></header>
+      <header><span class="pl-brand"><i>读</i> 研读</span><button class="pl-close" title="关闭">×</button></header>
       <div class="pl-source"></div>
       <div class="pl-divider"></div>
       <div class="pl-output pl-loading"><span></span><span></span><span></span></div>

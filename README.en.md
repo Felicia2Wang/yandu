@@ -1,8 +1,8 @@
-# Browser Paper Reader
+# Yandu
 
 **Use your own model and system prompt to read research papers.** Translate selections in local PDFs or web articles and save unfamiliar terms with their original context.
 
-[Download](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest) · [简体中文](README.md)
+[Download](https://github.com/Felicia2Wang/yandu/releases/latest) · [简体中文](README.md)
 
 - **Bring your own model and system prompt.** Save multiple API profiles and choose how LLMs handle terms, abbreviations, or citations. Supports DeepSeek, OpenAI-compatible APIs, and Google Cloud Translation.
 - **Translate selections in local PDFs or webpages.** Open a PDF already in Chrome or pick a local file. Read the translation next to the selection.
@@ -11,7 +11,7 @@
 
 ## Install
 
-Download and extract the ZIP from the [latest release](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest). Go to `chrome://extensions/`, enable **Developer mode**, and select the folder containing `manifest.json` using **Load unpacked**. Open **模型与提示词** in the extension popup to set an API profile and system prompt. The interface is in Simplified Chinese.
+Download and extract the ZIP from the [latest release](https://github.com/Felicia2Wang/yandu/releases/latest). Go to `chrome://extensions/`, enable **Developer mode**, and select the folder containing `manifest.json` using **Load unpacked**. Open **模型与提示词** in the extension popup to set an API profile and system prompt. The interface is in Simplified Chinese.
 
 Choose **本地 PDF 阅读** from the popup to read local PDFs. Enable **Allow access to file URLs** in the extension details if you want to detect local PDF tabs automatically. The manual file picker works without this permission. Scanned PDFs require a text layer from OCR.
 

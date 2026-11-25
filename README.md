@@ -1,8 +1,8 @@
-# 浏览器论文阅读插件
+# 研读｜Chrome 论文阅读插件
 
 **用自己的模型和 System Prompt 读论文。** 在 Chrome 里打开本地 PDF，划词看译文，顺手把生词和原句留给自己复习。
 
-[下载最新版](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest) · [安装步骤](#安装) · [English](README.en.md)
+[下载最新版](https://github.com/Felicia2Wang/yandu/releases/latest) · [安装步骤](#安装) · [English](README.en.md)
 
 - **模型和翻译规则自己定。** 保存多组 API 配置，按需切换 DeepSeek 或 OpenAI 兼容模型，再写自己的 System Prompt。例如「保留模型名、公式和引用，遇到缩写时补一句释义」。也支持 Google Cloud Translation。
 - **本地 PDF 打开就能划词。** 从扩展里选 Chrome 已打开的 PDF，或手动打开文件。PDF 和普通网页都可以在原文旁看译文。
@@ -11,7 +11,7 @@
 
 ## 安装
 
-1. 从 [GitHub Releases](https://github.com/Felicia2Wang/browser-paper-reader/releases/latest) 下载并解压扩展 ZIP。
+1. 从 [GitHub Releases](https://github.com/Felicia2Wang/yandu/releases/latest) 下载并解压扩展 ZIP。
 2. 打开 `chrome://extensions/`，开启「开发者模式」，点「加载已解压的扩展程序」，选择包含 `manifest.json` 的文件夹。
 3. 点扩展弹窗里的「模型与提示词」，填好 API 配置和 System Prompt。读本地论文时点「本地 PDF 阅读」，选中文字后点「译」。
 
