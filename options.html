@@ -1,0 +1,35 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>MarginGloss 设置</title><link rel="stylesheet" href="ui.css"></head>
+<body class="options-page"><main class="options-shell">
+  <header class="options-title"><div class="logo">MG</div><div><h1>MarginGloss 设置</h1><p>选择你信任的翻译服务，打造自己的阅读体验。</p></div></header>
+  <form id="form">
+    <section class="panel"><h2>翻译服务</h2>
+      <div class="field"><label for="editProfile">API 配置</label><select id="editProfile"></select></div>
+      <div class="field"><label for="profileName">配置名称</label><input id="profileName" placeholder="例如：DeepSeek 个人账号"></div>
+      <div class="field"><label for="provider">服务商</label><select id="provider"><option value="deepseek">DeepSeek</option><option value="openai">OpenAI 兼容接口 / 其他 LLM</option><option value="google">Google Cloud Translation</option></select></div>
+      <div id="deepseekFields" class="provider-fields">
+        <div class="field"><label for="deepseekApiKey">DeepSeek API Key</label><input id="deepseekApiKey" type="password" autocomplete="off" placeholder="sk-..."></div>
+        <div class="row">
+          <div class="field"><label for="deepseekModel">模型 ID</label><input id="deepseekModel" list="deepseekModels" spellcheck="false"><datalist id="deepseekModels"><option value="deepseek-flash"><option value="deepseek-v4-pro"></datalist><p class="help">可选择常用模型，也可填写官方模型 ID。</p></div>
+          <div class="field"><label for="deepseekThinking">思考模式</label><select id="deepseekThinking"><option value="disabled">关闭</option><option value="enabled">开启</option></select></div>
+        </div>
+        <div class="field" id="deepseekEffortField" hidden><label for="deepseekEffort">思考强度</label><select id="deepseekEffort"><option value="low">低</option><option value="high">高</option><option value="max">最大</option></select><p class="help">思考可能增加响应时间和输出 token 用量。</p></div>
+      </div>
+      <div id="openaiFields" class="provider-fields" hidden>
+        <div class="field"><label for="openaiApiKey">API Key</label><input id="openaiApiKey" type="password" autocomplete="off" placeholder="sk-..."></div>
+        <div class="row"><div class="field"><label for="openaiBaseUrl">Base URL</label><input id="openaiBaseUrl" placeholder="https://api.openai.com/v1"></div><div class="field"><label for="openaiModel">模型</label><input id="openaiModel" placeholder="gpt-4o-mini"></div></div>
+        <p class="help">兼容 OpenAI Chat Completions 的服务均可使用，例如硅基流动、OpenRouter 或你自己的网关。</p>
+      </div>
+      <div id="googleFields" class="provider-fields" hidden>
+        <div class="field"><label for="googleApiKey">Google Cloud Translation API Key</label><input id="googleApiKey" type="password" autocomplete="off"></div>
+        <div class="field"><label for="googleTarget">目标语言代码</label><input id="googleTarget" placeholder="zh-CN"></div>
+      </div>
+      <div class="security-note">API Key 只保存在这台浏览器的扩展本地存储中，并由扩展直接发给你选择的服务商。它不是加密保险箱，请勿在共享电脑上保存高权限 Key，建议为插件创建有限额度的专用 Key。</div>
+      <button id="removeProfile" class="secondary" type="button" hidden>删除此配置</button>
+    </section>
+    <section class="panel"><h2>翻译偏好</h2>
+      <div class="field"><label for="targetLanguage">目标语言</label><input id="targetLanguage" placeholder="简体中文"></div>
+      <div class="field"><label for="customPrompt">个人翻译提示词</label><textarea id="customPrompt"></textarea><p class="help">仅用于 LLM 服务。你可以加入自己的领域、术语偏好和输出格式。</p></div>
+    </section>
+    <div class="savebar"><span id="saved" class="saved">设置已保存</span><button class="primary" type="submit">保存设置</button></div>
+  </form>
+</main><script src="api-profiles.js"></script><script src="options.js"></script></body></html>
