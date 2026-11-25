@@ -82,7 +82,7 @@ async function listTranslationProfiles() {
 
 async function translate(text, context, profileId) {
   const settings = { ...DEFAULTS, ...(await chrome.storage.local.get(null)) };
-  if (!settings.enabled) throw new Error("MarginGloss 已暂停，请在扩展弹窗中开启。");
+  if (!settings.enabled) throw new Error("扩展已暂停，请在弹窗中重新开启。");
   if (!text?.trim()) throw new Error("没有可翻译的文本。");
   if (text.length > 6000) throw new Error("选中文本过长，请缩短到 6000 字符以内。");
 

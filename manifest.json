@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "MarginGloss — PDF & Web Translator",
-  "version": "0.4.0",
-  "description": "A small, personal selection translator for papers and local PDFs.",
+  "name": "浏览器论文阅读插件",
+  "version": "0.4.1",
+  "description": "在 Chrome 阅读网页论文和本地 PDF：划词翻译、专注模式、自定义 API 与模型，以及个人生词和术语知识库。",
   "icons": {
     "16": "assets/icon-16.png",
     "32": "assets/icon-32.png",
@@ -18,7 +18,7 @@
     "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "action": {
-    "default_title": "MarginGloss",
+    "default_title": "浏览器论文阅读插件",
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/icon-16.png",

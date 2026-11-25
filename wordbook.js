@@ -47,7 +47,7 @@ function exportVocabulary() {
   const csv = "\ufeff" + rows.map(row => row.map(value => `"${String(value || "").replaceAll('"', '""')}"`).join(",")).join("\r\n");
   const link = document.createElement("a");
   link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
-  link.download = `margingloss-vocabulary-${new Date().toISOString().slice(0, 10)}.csv`;
+  link.download = `paper-reader-vocabulary-${new Date().toISOString().slice(0, 10)}.csv`;
   link.click();
   setTimeout(() => URL.revokeObjectURL(link.href), 1000);
 }

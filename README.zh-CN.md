@@ -1,30 +1,3 @@
-# MarginGloss
+# 浏览器论文阅读插件
 
-**读论文时，查词不用离开原文。** 在网页或本地 PDF 里划词翻译，把术语、译文和当时的上下文一起留给自己复习。
-
-[下载最新版](https://github.com/Felicia2Wang/margingloss/releases/latest) · [English](README.md)
-
-- **术语有多种译法。** 划词后在原文旁查看译文。使用大模型时，插件会附上附近的上下文辅助消歧。
-- **本地论文在 Chrome 里不好查词。** 从扩展弹窗打开已在 Chrome 中打开的本地 PDF，或手动选文件。内置阅读器支持双指和按钮缩放，缩放时保留阅读位置。
-- **双栏、密排读着容易串行。** 专注模式弱化鼠标附近阅读带以外的区域。网页和 PDF 各自记住开关。
-- **只存一个译词，复习时想不起原意。** 收藏时保留原词、译文、上下文、来源和时间。词库支持搜索和 CSV 导出。
-- **想用自己的 Key 和模型。** 可保存多组 DeepSeek、OpenAI 兼容接口和 Google Cloud Translation 配置。弹窗选默认配置，翻译卡片可临时切换。DeepSeek 支持按配置选择模型和思考模式。
-
-## 安装
-
-1. 从 [GitHub Releases](https://github.com/Felicia2Wang/margingloss/releases/latest) 下载扩展 ZIP 并解压。也可以在仓库点 **Code → Download ZIP** 下载当前源码。
-2. 打开 `chrome://extensions/`，开启「开发者模式」，点「加载已解压的扩展程序」，选择含 `manifest.json` 的文件夹。
-3. 点扩展图标，进入「翻译设置」，添加并保存 API 配置。
-4. 网页中选中文字后点「译」。读本地论文时，从弹窗进入「本地 PDF 阅读」。
-
-自动识别 Chrome 已打开的本地 PDF 需要在扩展详情启用「允许访问文件网址」。也可以在阅读器里手动选文件。当前支持有文字层的 PDF，扫描件需先做 OCR。
-
-## 数据怎么处理
-
-PDF 在浏览器里解析。翻译时，选中文字会发给你配置的服务商。使用大模型翻译时，也会附上获取到的附近上下文。术语收藏、设置和 API Key 存在浏览器本地，项目没有中转服务器。
-
-## 开发与反馈
-
-项目使用 Manifest V3 和原生 JavaScript，可以直接加载源码。修改后重载扩展，再刷新网页或重开阅读器。提交问题时请附上 Chrome 和扩展版本，以及问题发生在网页还是 PDF 中。请勿附上 API Key 或私有文档。
-
-引用信息见 [CITATION.cff](CITATION.cff)。项目代码采用 [MIT License](LICENSE)，内置 Mozilla PDF.js 采用 [Apache License 2.0](vendor/LICENSE)。
+简体中文文档现位于仓库首页。查看 [功能与安装说明](README.md)。

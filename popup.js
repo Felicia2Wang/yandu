@@ -54,8 +54,8 @@ async function readFocus(message) {
     }
   } catch (error) {
     unavailable = /^https?:\/\//i.test(focusTab?.url || "")
-      ? "无法连接此网页。请检查 MarginGloss 的网站访问权限，或刷新后重试。"
-      : "请在普通网页或 MarginGloss PDF 阅读器中开启。";
+      ? "无法连接此网页。请检查扩展的网站访问权限，或刷新后重试。"
+      : "请在普通网页或插件内置 PDF 阅读器中开启。";
     if (/extensions gallery|chrome web store/i.test(error.message)) {
       unavailable = "Chrome 网上应用店限制扩展访问。";
     }

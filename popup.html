@@ -1,6 +1,6 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>MarginGloss</title><link rel="stylesheet" href="ui.css"></head>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>浏览器论文阅读插件</title><link rel="stylesheet" href="ui.css"></head>
 <body class="popup-body"><main class="popup">
-  <header class="popup-head"><div class="logo">MG</div><div><h1>MarginGloss</h1><p>你的论文翻译搭档</p></div><label class="switch"><input id="enabled" type="checkbox"><span></span></label></header>
+  <header class="popup-head"><div class="logo">读</div><div><h1>浏览器论文阅读插件</h1><p>划词翻译 · 专注阅读 · 知识库</p></div><label class="switch"><input id="enabled" type="checkbox"><span></span></label></header>
   <section class="pdf-entry" aria-label="本地 PDF 阅读">
     <button id="openPdf" class="primary" aria-controls="pdfChoices" aria-expanded="false">本地 PDF 阅读</button>
     <div id="pdfChoices" hidden>
@@ -13,6 +13,6 @@
   <div class="status"><span id="statusDot"></span><strong id="providerName">DeepSeek</strong><small id="keyStatus">检查配置中</small></div>
   <div class="field"><label for="activeProfile">当前 API 配置</label><select id="activeProfile" disabled></select></div>
   <label class="focus-row"><span><strong>当前页面专注模式</strong><small id="focusHelp" role="status">正在检查当前页面…</small></span><span class="switch"><input id="focusMode" type="checkbox" disabled><span></span></span></label>
-  <div class="button-row"><button id="wordbook" class="secondary">我的词库 <b id="wordCount">0</b></button><button id="settings" class="secondary">翻译设置</button></div>
+  <div class="button-row"><button id="wordbook" class="secondary">个人知识库 <b id="wordCount">0</b></button><button id="settings" class="secondary">翻译设置</button></div>
   <p class="hint">网页中选中文字后，点击浮出的“译”。</p>
 </main><script src="api-profiles.js"></script><script src="popup.js"></script></body></html>

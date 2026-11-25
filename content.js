@@ -147,7 +147,7 @@
     copy.hidden = true;
     save.hidden = true;
     copy.textContent = "复制译文";
-    save.textContent = "收藏词库";
+    save.textContent = "收藏";
     save.disabled = false;
     output.classList.remove("pl-error");
     output.classList.add("pl-loading");
@@ -182,12 +182,12 @@
     const card = document.createElement("section");
     card.className = "pl-root pl-card";
     card.innerHTML = `
-      <header><span class="pl-brand"><i>MG</i> MarginGloss</span><button class="pl-close" title="关闭">×</button></header>
+      <header><span class="pl-brand"><i>读</i> 浏览器论文阅读插件</span><button class="pl-close" title="关闭">×</button></header>
       <div class="pl-source"></div>
       <div class="pl-divider"></div>
       <div class="pl-output pl-loading"><span></span><span></span><span></span></div>
       <footer>
-        <button class="pl-save" hidden>收藏词库</button>
+        <button class="pl-save" hidden>收藏</button>
         <button class="pl-copy" hidden>复制译文</button>
         <select class="pl-profile" aria-label="选择本次翻译的 API 配置" disabled><option value="">选择翻译配置</option></select>
       </footer>`;

@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "If you use MarginGloss in your work, please cite this software."
+message: "If you use Browser Paper Reader in your work, please cite this software."
 type: software
-title: MarginGloss
+title: "浏览器论文阅读插件 (Browser Paper Reader)"
 authors:
-  - name: MarginGloss contributors
-version: 0.4.0
+  - name: Browser Paper Reader contributors
+version: 0.4.1
 date-released: 2026-11-25
 license: MIT
-repository-code: "https://github.com/Felicia2Wang/margingloss"
+repository-code: "https://github.com/Felicia2Wang/browser-paper-reader"
