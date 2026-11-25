@@ -20,6 +20,9 @@ function render() {
   listElement.replaceChildren();
   summaryElement.textContent = query ? `${filtered.length} / ${entries.length} 个词条` : `${entries.length} 个词条`;
   emptyElement.hidden = filtered.length > 0;
+  document.getElementById("emptyTitle").textContent = query ? "没有匹配的词条" : "还没有收藏生词或术语";
+  document.getElementById("emptyHelp").textContent = query ? "可以试试其他关键词。" : "划词翻译后，点击卡片里的「收藏」。";
+  document.getElementById("exportCsv").disabled = entries.length === 0;
   filtered.forEach(entry => {
     const node = template.content.firstElementChild.cloneNode(true);
     node.querySelector(".source").textContent = entry.source;

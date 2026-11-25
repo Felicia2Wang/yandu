@@ -1,6 +1,6 @@
 (() => {
-  if (window.__paperLingoPageFocusLoaded) return;
-  window.__paperLingoPageFocusLoaded = true;
+  if (window.__yanduPageLoaded) return;
+  window.__yanduPageLoaded = true;
   // Overlay nodes from an older, reloaded extension can outlive its script.
   document.querySelectorAll(":root > .pl-root.pl-focus-mask").forEach(node => node.remove());
 
@@ -40,8 +40,8 @@
   window.addEventListener("pageshow", () => refreshFocus(true));
   window.addEventListener("hashchange", () => refreshFocus());
   window.navigation?.addEventListener("currententrychange", () => refreshFocus());
-  document.addEventListener("paperlingo-pdf-changed", () => refreshFocus());
-  document.addEventListener("paperlingo-pdf-zoom", closeAll);
+  document.addEventListener("yandu-pdf-changed", () => refreshFocus());
+  document.addEventListener("yandu-pdf-zoom", closeAll);
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area === "local" && focusKey && changes[focusKey]) applyFocus(Boolean(changes[focusKey].newValue));
   });
@@ -181,25 +181,31 @@
     closeCard();
     const card = document.createElement("section");
     card.className = "pl-root pl-card";
-    card.innerHTML = `
-      <header><span class="pl-brand"><i>读</i> 研读</span><button class="pl-close" title="关闭">×</button></header>
-      <div class="pl-source"></div>
-      <div class="pl-divider"></div>
-      <div class="pl-output pl-loading"><span></span><span></span><span></span></div>
-      <footer>
-        <button class="pl-save" hidden>收藏</button>
-        <button class="pl-copy" hidden>复制译文</button>
-        <select class="pl-profile" aria-label="选择本次翻译的 API 配置" disabled><option value="">选择翻译配置</option></select>
-      </footer>`;
-    card.querySelector(".pl-source").textContent = source;
+    card.setAttribute("aria-label", "研读翻译");
+    const header = cardPart("div", "pl-header");
+    const close = cardPart("button", "pl-close", "×");
+    close.setAttribute("aria-label", "关闭");
+    header.append(cardPart("span", "pl-brand", "研读"), close);
+    const output = cardPart("div", "pl-output pl-loading");
+    output.setAttribute("role", "status");
+    output.setAttribute("aria-label", "译文");
+    output.append(...Array.from({ length: 3 }, () => document.createElement("span")));
+    const actions = cardPart("div", "pl-actions");
+    const save = cardPart("button", "pl-save", "收藏");
+    const copy = cardPart("button", "pl-copy", "复制译文");
+    save.hidden = copy.hidden = true;
+    const picker = cardPart("select", "pl-profile");
+    picker.setAttribute("aria-label", "选择本次翻译的 API 配置");
+    picker.disabled = true;
+    picker.append(new Option("选择翻译配置", ""));
+    actions.append(picker, save, copy);
+    card.append(header, cardPart("div", "pl-source", source), output, actions);
     document.documentElement.appendChild(card);
     state.card = card;
-    const x = Math.min(anchor.left, window.innerWidth - 380);
-    const y = anchor.bottom + 10;
-    position(card, x, y, 360, 240);
+    position(card, anchor.left, anchor.bottom + 10, Math.min(360, window.innerWidth - 24), 240);
     card.addEventListener("mousedown", e => e.stopPropagation());
-    card.querySelector(".pl-close").onclick = closeAll;
-    card.querySelector(".pl-save").onclick = async event => {
+    close.onclick = closeAll;
+    save.onclick = async event => {
       const button = event.currentTarget;
       const requestId = state.requestId;
       button.disabled = true;
@@ -217,17 +223,30 @@
       button.textContent = response?.ok ? "已收藏" : "收藏失败";
       if (!response?.ok) button.disabled = false;
     };
-    card.querySelector(".pl-copy").onclick = async event => {
+    copy.onclick = async event => {
       const button = event.currentTarget;
       const requestId = state.requestId;
-      await navigator.clipboard.writeText(card.querySelector(".pl-output").textContent);
+      let label = "已复制";
+      try {
+        await navigator.clipboard.writeText(output.textContent);
+      } catch {
+        label = "请手动复制";
+      }
       if (requestId !== state.requestId) return;
-      button.textContent = "已复制";
+      button.textContent = label;
       setTimeout(() => {
         if (requestId === state.requestId) button.textContent = "复制译文";
       }, 1200);
     };
     return card;
+  }
+
+  function cardPart(tag, className, text) {
+    const element = document.createElement(tag);
+    element.className = className;
+    if (tag === "button") element.type = "button";
+    if (text !== undefined) element.textContent = text;
+    return element;
   }
 
   function getContext(selected) {
@@ -284,7 +303,9 @@
     let top = y;
     if (top + estimatedHeight > window.innerHeight) top = Math.max(margin, state.anchor.top - estimatedHeight - 8);
     element.style.left = `${left}px`;
-    element.style.top = `${Math.max(margin, top)}px`;
+    const pageTop = `${Math.max(margin, top)}px`;
+    element.style.top = pageTop;
+    element.style.setProperty("--pl-top", pageTop);
   }
 
   function removeBubble() { state.bubble?.remove(); state.bubble = null; }

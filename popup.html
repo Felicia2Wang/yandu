@@ -1,18 +1,24 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>研读</title><link rel="stylesheet" href="ui.css"></head>
 <body class="popup-body"><main class="popup">
-  <header class="popup-head"><div class="logo">读</div><div><h1>研读</h1><p>用自己的模型和提示词读论文</p></div><label class="switch"><input id="enabled" type="checkbox"><span></span></label></header>
+  <header class="popup-head">
+    <div class="logo" aria-hidden="true">研</div>
+    <div><h1>研读</h1><p>用自己的模型读论文</p></div>
+    <label class="switch" title="划词翻译总开关"><input id="enabled" type="checkbox" aria-label="划词翻译"><span></span></label>
+  </header>
   <section class="pdf-entry" aria-label="本地 PDF 阅读">
     <button id="openPdf" class="primary" aria-controls="pdfChoices" aria-expanded="false">本地 PDF 阅读</button>
+    <button id="chooseFile" class="quiet pdf-link">选文件</button>
     <div id="pdfChoices" hidden>
       <p id="pdfStatus" role="status"></p>
       <div id="pdfList"></div>
-      <button id="fileAccess" class="pdf-link" hidden>前往扩展详情</button>
+      <button id="fileAccess" class="quiet pdf-link" hidden>前往扩展详情</button>
     </div>
-    <button id="chooseFile" class="pdf-link">手动选择 PDF 文件</button>
   </section>
-  <div class="status"><span id="statusDot"></span><strong id="providerName">DeepSeek</strong><small id="keyStatus">检查配置中</small></div>
-  <div class="field"><label for="activeProfile">当前 API 配置</label><select id="activeProfile" disabled></select></div>
-  <label class="focus-row"><span><strong>当前页面专注模式</strong><small id="focusHelp" role="status">正在检查当前页面…</small></span><span class="switch"><input id="focusMode" type="checkbox" disabled><span></span></span></label>
+  <section class="popup-controls" aria-label="当前阅读配置">
+    <div class="field"><label for="activeProfile">翻译模型与 API</label><select id="activeProfile" disabled></select></div>
+    <div class="status"><span id="statusDot" aria-hidden="true"></span><strong id="providerName"></strong><small id="keyStatus">检查配置中</small></div>
+    <label class="focus-row"><span><strong>本页专注模式</strong><small id="focusHelp" role="status">正在检查当前页面…</small></span><span class="switch"><input id="focusMode" type="checkbox" aria-label="本页专注模式" disabled><span></span></span></label>
+  </section>
   <div class="button-row"><button id="wordbook" class="secondary">个人知识库 <b id="wordCount">0</b></button><button id="settings" class="secondary">模型与提示词</button></div>
   <p class="hint">网页中选中文字后，点击浮出的“译”。</p>
 </main><script src="api-profiles.js"></script><script src="popup.js"></script></body></html>

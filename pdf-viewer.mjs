@@ -74,8 +74,8 @@ async function loadPdf(bytes, name) {
   clearTimeout(redrawTimer);
   loadingTask?.destroy().catch(() => {});
   delete document.documentElement.dataset.pdfFingerprint;
-  document.dispatchEvent(new Event("paperlingo-pdf-changed"));
-  document.dispatchEvent(new Event("paperlingo-pdf-zoom"));
+  document.dispatchEvent(new Event("yandu-pdf-changed"));
+  document.dispatchEvent(new Event("yandu-pdf-zoom"));
   welcome.hidden = true;
   progress.hidden = false;
   try {
@@ -110,7 +110,7 @@ async function loadPdf(bytes, name) {
     records.forEach(record => observer.observe(record.element));
     document.title = `${name} · 研读`;
     document.documentElement.dataset.pdfFingerprint = pdf.fingerprints[0];
-    document.dispatchEvent(new Event("paperlingo-pdf-changed"));
+    document.dispatchEvent(new Event("yandu-pdf-changed"));
   } catch (error) {
     if (token !== generation) return;
     welcome.hidden = false;
@@ -146,7 +146,7 @@ function zoom(value, x, y) {
   if (!point || next === scale) return;
   scale = next;
   document.getSelection()?.removeAllRanges();
-  document.dispatchEvent(new Event("paperlingo-pdf-zoom"));
+  document.dispatchEvent(new Event("yandu-pdf-zoom"));
   layout();
   const rect = point.record.element.getBoundingClientRect();
   viewer.scrollBy(rect.left + point.pageX * scale - point.x, rect.top + point.pageY * scale - point.y);
